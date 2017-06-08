@@ -122,7 +122,7 @@
 				</td>
 				<td class="value"><input id="createDate" name="createDate"
 					type="text" style="width: 150px" class="Wdate"
-					onClick="WdatePicker()" readOnly="true"
+					 readOnly="true"
 					value='<fmt:formatDate value='${soPickupplanPage.createDate}' type="date" pattern="yyyy-MM-dd"/>'>
 					<span class="Validform_checktip"></span> <label
 					class="Validform_label" style="display: none;">单据日期</label></td>
@@ -242,11 +242,13 @@
 				<label class="Validform_label" style="display: none;">承运单位</label>
 			</td>
 			<td align="right">
-				<label class="Validform_label"></label>
+				<label class="Validform_label">提单起始日</label>
 			</td>
 			<td class="value">
+			  <input id="pickupbegindate" name="pickupbegindate" type="text" style="width: 150px"  readOnly="true"
+					value='<fmt:formatDate value='${soPickupplanPage.pickupbegindate}' type="date" pattern="yyyy-MM-dd"/>' datatype="*">
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;"></label>
+				<label class="Validform_label" style="display: none;">提单起始日</label>
 			</td>
 			
 			<td align="right">

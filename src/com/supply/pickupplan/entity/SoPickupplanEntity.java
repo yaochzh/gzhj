@@ -366,7 +366,7 @@ public class SoPickupplanEntity
     this.dr = dr;
   }
 
-  @Column(name="PICKUPBEGINDATE", nullable=true, length=32)
+  @Column(name="PICKUPBEGINDATE", nullable=true)
   public Date getPickupbegindate()
   {
     return this.pickupbegindate;

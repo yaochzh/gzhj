@@ -23,6 +23,7 @@ import org.jeecgframework.core.enums.SysThemesEnum;
 import org.jeecgframework.core.extend.datasource.DataSourceContextHolder;
 import org.jeecgframework.core.extend.datasource.DataSourceType;
 import org.jeecgframework.core.util.ContextHolderUtils;
+import org.jeecgframework.core.util.DateUtils;
 import org.jeecgframework.core.util.IpUtil;
 import org.jeecgframework.core.util.ListtoMenu;
 import org.jeecgframework.core.util.NumberComparator;
@@ -50,6 +51,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
+
+import freemarker.template.utility.DateUtil;
 
 /**
  * 登陆初始化控制器
@@ -134,7 +137,7 @@ public class LoginController extends BaseController{
 //        } else {
 //            update-end--Author:zhangguoming  Date:20140226 for：添加验证码
             int users = userService.getList(TSUser.class).size();
-            
+           
             if (users == 0) {
                 j.setMsg("a");
                 j.setSuccess(false);

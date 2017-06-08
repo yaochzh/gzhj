@@ -179,8 +179,6 @@
 		<input id="unloadplace" name="unloadplace" type="hidden"
 			value="${soPickupplanPage.unloadplace }">
 		<input id="dr" name="dr" type="hidden" value="${soPickupplanPage.dr }">
-		<input id="pickupbegindate" name="pickupbegindate" type="hidden"
-			value="${soPickupplanPage.pickupbegindate }">
 		<input id="billstatus" name="billstatus" type="hidden"
 			value="${soPickupplanPage.billstatus }">
 		<input id="ts" name="ts" type="hidden" value="${soPickupplanPage.ts }">
@@ -325,11 +323,13 @@
 				<label class="Validform_label" style="display: none;">承运单位</label>
 			</td>
 			<td align="right">
-				<label class="Validform_label"></label>
+				<label class="Validform_label">提单起始日</label>
 			</td>
 			<td class="value">
+			  <input id="pickupbegindate" name="pickupbegindate" type="text" style="width: 150px"  onClick="WdatePicker()"
+					value='<fmt:formatDate value='${soPickupplanPage.pickupbegindate}' type="date" pattern="yyyy-MM-dd"/>' datatype="*">
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;"></label>
+				<label class="Validform_label" style="display: none;">提单起始日</label>
 			</td>
 			
 			<td align="right">

@@ -2,6 +2,7 @@ package org.jeecgframework.tag.core.easyui;
 
 import com.google.gson.Gson;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -319,7 +320,7 @@ public class DictSelectTag extends TagSupport
 
   private StringBuffer datatype(StringBuffer sb)
   {
-    if (!StringUtils.isBlank(this.datatype)) {
+    if (!StringUtils.isBlank(this.datatype) ) {
       sb.append(" datatype=\"" + this.datatype + "\"");
     }
     return sb;
