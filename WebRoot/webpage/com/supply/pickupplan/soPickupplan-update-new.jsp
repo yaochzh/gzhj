@@ -21,8 +21,8 @@
 	  var surplusnum = document.getElementById("surplusnum").value;
 	   var planassnum = document.getElementById("planassnum").value;
 	   if(eval(planassnum) > eval(surplusnum)) {
-		   $.messager.alert('错误', "计划数量不能大于剩余数量！");
-          return false;
+		  // $.messager.alert('错误', "计划数量不能大于剩余数量！");
+         // return false;
 	   }
 	  for(var i=0;i<size;i++) {
 		  var vehiclelicense = document.getElementById("soPickupplanBList["+i+"].vehiclelicense").value;
@@ -115,6 +115,12 @@
 			value="${soPickupplanPage.soordernum }">
 		<input id="customercode" name="customercode" type="hidden"
 			value="${soPickupplanPage.customercode }">
+			
+		<input id="delivercustomer" name="delivercustomer" type="hidden"
+			value="${soPickupplanPage.delivercustomer }">
+			
+		<input id="carrier" name="carrier" type="hidden"
+			value="${soPickupplanPage.carrier }">
 		<input id="carriercode" name="carriercode" type="hidden" value="${soPickupplanPage.carriercode }">
 		<table cellpadding="0" cellspacing="1" class="formtable">
 			<tr>
@@ -241,7 +247,7 @@
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">承运单位</label>
 			</td>
-			<td align="right">
+				<td align="right">
 				<label class="Validform_label">提单起始日</label>
 			</td>
 			<td class="value">
@@ -279,13 +285,11 @@
 				<td align="center"><input style="width:20px;" type="checkbox"
 					name="ck" />
 				</td>
-
-				
-				<td align="left"><form class="vehiclelicense">
-						<input id="soPickupplanBList[#index#].vehiclelicense"
+			
+				<td align="left"><input id="soPickupplanBList[#index#].vehiclelicense"
 							name="soPickupplanBList[#index#].vehiclelicense" maxlength="32"
 					type="text" class="inputxt" style="width:120px;" datatype="*"  readOnly="true"></input>
-					</form> <label class="Validform_label" style="display: none;">车牌号</label>
+					<label class="Validform_label" style="display: none;">车牌号</label>
 				</td>
 				<td align="left"><input
 					id="soPickupplanBList[#index#].drivername"
