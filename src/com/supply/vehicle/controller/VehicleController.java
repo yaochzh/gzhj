@@ -358,9 +358,41 @@ public class VehicleController extends BaseController
   @RequestMapping(params={"datagridVehicle"})
   public void datagridVehicle(VehicleEntity vehicle, HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid)
   {
+
+      String ccarrier = request.getParameter("ccarrier") == null ? "" : request.getParameter("ccarrier").toString();
+
+      if (ccarrier.isEmpty()) {
+        return;
+      }
     CriteriaQuery cq = new CriteriaQuery(VehicleEntity.class, dataGrid);
     String queryVehicle = 
-      "select bd_vehicle.vehiclelicense from bd_vehicle where  bd_vehicle.vehiclelicense not in\n      (select so_pickupplan_b.vehiclelicense\n         from so_pickupplan\n         left join so_pickupplan_b\n           on so_pickupplan.id = so_pickupplan_b.fk_id\n        where so_pickupplan.expiredate > trunc(sysdate)\n        and so_pickupplan_b.vehiclelicense is not null\n          )\n  and bd_vehicle.vehiclelicense not in\n      (select po_deliveryplan_b.vehiclelicense\n         from po_deliveryplan\n         left join po_deliveryplan_b\n           on po_deliveryplan.id = po_deliveryplan_b.fk_id\n        where po_deliveryplan.expiredate > trunc(sysdate)\n        and po_deliveryplan_b.vehiclelicense is not null\n          ) and bsealflag <> 'Y'";
+
+"select bd_vehicle.vehiclelicense\n" +
+"  from bd_vehicle\n" + 
+" where bd_vehicle.vehiclelicense not in\n" + 
+"       (select so_pickupplan_b.vehiclelicense\n" + 
+"          from so_pickupplan\n" + 
+"          left join so_pickupplan_b\n" + 
+"            on so_pickupplan.id = so_pickupplan_b.fk_id\n" + 
+"         where so_pickupplan.expiredate > trunc(sysdate)\n" + 
+"           and so_pickupplan_b.vehiclelicense is not null\n" + 
+"           and so_pickupplan_b.vehiclelicense in\n" + 
+"               (select bd_vehicle.vehiclelicense\n" + 
+"                  from bd_vehicle\n" + 
+"                 where  ccarrier = '"+ccarrier+"'))\n" + 
+"   and bd_vehicle.vehiclelicense not in\n" + 
+"       (select po_deliveryplan_b.vehiclelicense\n" + 
+"          from po_deliveryplan\n" + 
+"          left join po_deliveryplan_b\n" + 
+"            on po_deliveryplan.id = po_deliveryplan_b.fk_id\n" + 
+"         where po_deliveryplan.expiredate > trunc(sysdate)\n" + 
+"           and po_deliveryplan_b.vehiclelicense is not null\n" + 
+"           and po_deliveryplan_b.vehiclelicense in\n" + 
+"               (select bd_vehicle.vehiclelicense\n" + 
+"                  from bd_vehicle\n" + 
+"                 where ccarrier = '"+ccarrier+"'))\n" + 
+"   and bsealflag <> 'Y'\n" + 
+"   and ccarrier = '"+ccarrier+"'";
 
     List vehicleEntitys = this.systemService
       .findObjForJdbc(queryVehicle, 1, 10000, VehicleEntity.class);
@@ -374,11 +406,6 @@ public class VehicleController extends BaseController
         criterion = Restrictions.or(criterion, Restrictions.in("vehiclelicense", ls));
       }
       cq.getCriterionList().addPara(criterion);
-    }
-    String ccarrier = request.getParameter("ccarrier") == null ? "" : request.getParameter("ccarrier").toString();
-
-    if (ccarrier.isEmpty()) {
-      return;
     }
     vehicle.setCcarrier(ccarrier);
 

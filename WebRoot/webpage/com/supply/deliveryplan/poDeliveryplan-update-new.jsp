@@ -112,6 +112,8 @@
 			value="${poDeliveryplanPage.supplercode }">
 		<input id="carriercode" name="carriercode"type="hidden"
 			value="${poDeliveryplanPage.carriercode }">
+			<input id="carrier" name="carrier" type="hidden"
+			value="${poDeliveryplanPage.carrier }">
 		<table cellpadding="0" cellspacing="1" class="formtable">
 			<tr>
 				<td align="right"><label class="Validform_label">计划单号:</label>

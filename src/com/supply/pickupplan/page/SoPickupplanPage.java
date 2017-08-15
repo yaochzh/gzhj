@@ -64,6 +64,7 @@ public class SoPickupplanPage
   @Excel(name="备注")
   private String vnote;
   private String dr;
+  @Excel(name="提单起始日期", format="yyyy-MM-dd")
   private Date pickupbegindate;
 
   @Excel(name="承运单位")

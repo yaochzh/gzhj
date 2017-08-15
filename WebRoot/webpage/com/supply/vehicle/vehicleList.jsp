@@ -33,9 +33,9 @@
    <t:dgCol title="自定义项3"  field="def3"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="自定义项4"  field="def4"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="自定义项5"  field="def5"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="备注"  field="vnote"    queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="备注"  field="vnote"    queryMode="single"  width="120"></t:dgCol>--%>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
-   <%--<t:dgDelOpt title="删除" url="vehicleController.do?doDel&id={id}" />--%>
+   <t:dgDelOpt title="删除" url="vehicleController.do?doDel&id={id}" />
    <t:dgToolBar title="录入" icon="icon-add" url="vehicleController.do?goAdd" funname="add"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="vehicleController.do?goUpdate" funname="update"></t:dgToolBar>
      <%--<t:dgToolBar title="批量删除"  icon="icon-remove" url="vehicleController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>--%>

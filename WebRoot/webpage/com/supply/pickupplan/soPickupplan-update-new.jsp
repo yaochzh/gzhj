@@ -98,8 +98,6 @@
 		<input id="unloadplace" name="unloadplace" type="hidden"
 			value="${soPickupplanPage.unloadplace }">
 		<input id="dr" name="dr" type="hidden" value="${soPickupplanPage.dr }">
-		<input id="pickupbegindate" name="pickupbegindate" type="hidden"
-			value="${soPickupplanPage.pickupbegindate }">
 		<input id="billstatus" name="billstatus" type="hidden"
 			value="${soPickupplanPage.billstatus }">
 		<input id="ts" name="ts" type="hidden" value="${soPickupplanPage.ts }">
@@ -222,7 +220,7 @@
 				</td>
 				<td class="value"><input id="planassnum" name="planassnum"
 					type="text" style="width: 150px" class="inputxt"
-					value='${soPickupplanPage.planassnum}' datatype="n" readOnly="true"> <span
+					value='${soPickupplanPage.planassnum}'  readOnly="true"> <span
 					class="Validform_checktip"></span> <label class="Validform_label"
 					style="display: none;">计划分配量</label></td>
 				<td align="right"><label class="Validform_label">接收单位</label></td>

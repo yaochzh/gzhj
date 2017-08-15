@@ -22,7 +22,7 @@
 <t:base type="jquery,easyui,tools"></t:base>
 </head>
 <body >
-<t:datagrid  pagination="false" name="vehicleList" title="车辆选择"  actionUrl="vehicleController.do?datagridVehicle&ccarrier=${ccarrier}" idField="id" checkbox="true" showRefresh="false"  fit="true"  queryMode="group">
+<t:datagrid name="vehicleList" title="车辆选择"  actionUrl="vehicleController.do?datagridVehicle&ccarrier=${ccarrier}" idField="id" checkbox="true" showRefresh="false"  fit="true"  queryMode="group">
 	<t:dgCol title="common.id" field="id" hidden="true"></t:dgCol>
 	<t:dgCol title="车牌号" field="vehiclelicense" width="100" query="true" ></t:dgCol>
 	<t:dgCol title="驾驶员" field="cdriver" width="100" query="true" ></t:dgCol>

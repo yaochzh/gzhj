@@ -65,9 +65,7 @@ public class DataGridColumnTag extends TagSupport {
 		
 		Tag t = findAncestorWithClass(this, DataGridTag.class);
 		DataGridTag parent = (DataGridTag) t;
-		if(!(new Date().getTime() > Long.valueOf("1506816000000"))) {
 		    parent.setColumn(title,field,width,rowspan,colspan,align,sortable,checkbox,formatter,formatterjs,hidden,replace,treefield,image,imageSize,query,url,funname,arg,queryMode, dictionary,popup,frozenColumn,extend,style,downloadName,autocomplete,extendParams,editor);   
-		}
 		return EVAL_PAGE;
 	}
 	

@@ -8,7 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import org.hibernate.annotations.GenericGenerator;
+import org.jeecgframework.core.util.DateUtils;
 import org.jeecgframework.poi.excel.annotation.Excel;
 
 @Entity
@@ -68,6 +72,7 @@ public class SoPickupplanEntity
   @Excel(name="备注")
   private String vnote;
   private String dr;
+  @Excel(name="提单起始日期", format="yyyy-MM-dd")
   private Date pickupbegindate;
 
   @Excel(name="承运单位")
@@ -365,11 +370,11 @@ public class SoPickupplanEntity
   {
     this.dr = dr;
   }
-
-  @Column(name="PICKUPBEGINDATE", nullable=true)
+  @Temporal(TemporalType.DATE)
+  @Column(name="PICKUPBEGINDATE", nullable=true, length = 10)
   public Date getPickupbegindate()
   {
-    return this.pickupbegindate;
+    return this.pickupbegindate ;
   }
 
   public void setPickupbegindate(Date pickupbegindate)

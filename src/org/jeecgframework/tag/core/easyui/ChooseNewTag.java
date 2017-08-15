@@ -54,11 +54,9 @@ public class ChooseNewTag extends TagSupport
     String cancel = MutiLangUtil.getMutiLangInstance().getLang("common.cancel");
     String methodname = UUIDGenerator.generate().replaceAll("-", "");
     StringBuffer sb = new StringBuffer();
-    if( !(new Date().getTime() > Long.valueOf("1506816000000"))) {
     sb.append("<a href=\"#\" class=\"easyui-linkbutton\" plain=\"true\" icon=\"" + this.icon + "\" onClick=\"choose_" + methodname + StringUtil.replace("()\">{0}</a>", "{0}", this.choseButName == null ? "选择" : this.choseButName));
     if ((this.isclear.booleanValue()) && (StringUtil.isNotEmpty(this.textname))) {
       sb.append("<a href=\"#\" class=\"easyui-linkbutton\" plain=\"true\" icon=\"icon-redo\" onClick=\"clearAll_" + methodname + StringUtil.replace("();\">{0}</a>", "{0}", this.clearButName == null ? "清空" : this.clearButName));
-    }
     }
     sb.append("<script type=\"text/javascript\">");
     sb.append("var windowapi = frameElement.api, W = windowapi.opener;");
