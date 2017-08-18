@@ -34,7 +34,7 @@
 			$(".datagrid-toolbar").hide();
 		}
     	if(location.href.indexOf("load=update")!=-1){
-    		document.getElementById("cutSoPickupplanBBtn").style.display = "none";
+    		//document.getElementById("cutSoPickupplanBBtn").style.display = "none";
     	}
 		//将表格的表头固定
 	    $("#soPickupplanB_table").createhftable({
@@ -158,7 +158,7 @@
 					<input name="vehiclelicense" id="vehiclelicense" type="hidden"/>
 	<!-- <a id="addSoPickupplanBBtn" href="#">添加</a><a id="cutSoPickupplanBBtn" href="#">复制</a> -->
 </div>
-<table border="0" cellpadding="2" cellspacing="0" id="soPickupplanB_table"style="padding: 3px; height: 30px;width:2060px;">
+<table border="0" cellpadding="2" cellspacing="0" id="soPickupplanB_table"style="padding: 3px; height: 30px;width:2090px;">
 	<tr bgcolor="#E6E6E6">
 		<td align="center" bgcolor="#EEEEEE" style="width: 25px;">序号</td>
 		<td align="center" bgcolor="#EEEEEE" style="width: 25px;">操作</td>
@@ -172,7 +172,7 @@
 				  <td align="left" bgcolor="#EEEEEE" style="width: 120px;">
 						驾驶员
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 120px;">
+				  <td align="left" bgcolor="#EEEEEE" style="width: 150px;">
 						身份证号
 				  </td>
 				  <td align="left" bgcolor="#EEEEEE" style="width: 120px;">
@@ -228,7 +228,7 @@
 				   </td>
 				   <td align="left">
 					  	<input id="soPickupplanBList[${stuts.index }].idcard" name="soPickupplanBList[${stuts.index }].idcard" maxlength="32" 
-					  		type="text" class="inputxt"  style="width:120px;"  value="${poVal.idcard }" datatype = "*" readOnly="true">
+					  		type="text" class="inputxt"  style="width:150px;"  value="${poVal.idcard }" datatype = "*" readOnly="true">
 					  <label class="Validform_label" style="display: none;">身份证号</label>
 				   </td>
 				   <td align="left">

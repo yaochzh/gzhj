@@ -11,6 +11,7 @@
    <t:dgCol title="采购订单号"  field="poordercode"    queryMode="single"  width="150"></t:dgCol>
    <t:dgCol title="物料编码"  field="materialcode"   query="true" queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="物料名称"  field="materialname"   query="true" queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="到期日期"  field="expiredate" formatter="yyyy-MM-dd"  query="true" queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="规格"  field="spec"    queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="供应商名称"  field="supplername"  query="true"  queryMode="single"  width="120"></t:dgCol>
     <t:dgCol title="承运商"  field="carrier"  query="true"  dictionary="bd_carrier,id,carriername" queryMode="single"  width="120"></t:dgCol>
@@ -18,7 +19,6 @@
    <t:dgCol title="剩余数量"  field="surplusnum"    queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="仓库"  field="store"    queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="单据日期"  field="createDate" formatter="yyyy-MM-dd"  query="true" queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="到期日期"  field="expiredate" formatter="yyyy-MM-dd"  query="true" queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="卸货地点"  field="unloadplace"    queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="备注"  field="vnote"    queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="删除标志"  field="dr"  hidden="true"  queryMode="single"  width="120"></t:dgCol>

@@ -23,6 +23,7 @@
     <t:dgCol title="承运商"  field="carrier"  query="true"  dictionary="bd_carrier,id,carriername" queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="物料编码"  field="materialcode"   query="true" queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="物料名称"  field="materialname"   query="true" queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="到期日期"  field="expiredate" formatter="yyyy-MM-dd"  query="true" queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="规格型号"  field="spec"    queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="卸货地点"  field="unloadplace"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="仓库"  field="store"    queryMode="single"  width="120"></t:dgCol>
@@ -33,7 +34,6 @@
    <t:dgCol title="单据日期"  field="createDate" formatter="yyyy-MM-dd"  query="true" queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="删除标志"  field="dr"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="提单起始日"  field="pickupbegindate" formatter="yyyy-MM-dd" hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="到期日期"  field="expiredate" formatter="yyyy-MM-dd"  query="true" queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="单位"  field="unit"    queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="时间戳"  field="ts"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="审核人"  field="approve"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
